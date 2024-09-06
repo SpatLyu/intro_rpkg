@@ -1,0 +1,144 @@
+---
+title: "R packages developed by Wenbo Lv"
+author: Wenbo Lv
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    self_contained: false  # Change to true if presenting without internet access
+    css: ["robot", "robot-fonts", "assets/custom.css"]
+    includes:
+      in_header: "assets/mathjax-eq-num.html"
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9' # alternatives '16:9' or '4:3' or others e.g. 13:9
+---
+
+class: bgclass
+layout: true
+<!-- Sets the background class to be the AAGI logo slide background -->
+
+---
+
+
+
+```{r,eval=TRUE,include=FALSE}
+knitr::include_graphics("assets/pkgs_lyu.png")
+```
+
+
+
+---
+
+# Basics of xaringan
+
+Check out an in-depth tutorial [here](https://slides.yihui.name/xaringan/#1) or read the documentation [here](https://bookdown.org/yihui/rmarkdown/xaringan.html).
+
+
+
+- Press `h` or `?` to see the possible ninjutsu you can use in remark.js.
+
+- You can write slide notes under three question marks `???`. These notes are only displayed in the presentation mode, and only the speaker can see these notes. 
+
+- You can see all the goodies like this (hint press `p`).
+
+See the following slides for some more tips and tricks
+
+???
+
+Here are some notes for this slide
+
+
+---
+
+# Changing backgrounds
+
+- Just swap in a different image and name it the same as the current one (`title_bg.jpg` for the title slide, or `slide_bg.jpg` for the regular slides.)
+
+--
+
+- If you need to change logos (e.g., to add in a project partner), you will need to edit the `custom.css` file. Change `partners.jpg` to `project_partner.jpg` (in the `.title-slide background-image:` attribute) and modify the `project_partner.jpg` to include the partner logo in the space provided.
+
+---
+
+# Knit to index.html filename:
+
+Simply include this in your YAML header:
+
+```
+knit: (
+    function(inputFile, encoding) {
+        filename <- 'index'
+        rmarkdown::render(
+            input       = inputFile,
+            encoding    = encoding,
+            output_file = filename) })
+```            
+
+This is useful in a github repo, so you can make slides available over the web.
+
+---
+
+## Footnotes
+
+To include footnotes, you will need to DIY<sup>1</sup>
+
+Don't forget the footnote!.fn[2]
+
+.footnote[
+[1] Footnotes are not automatic.  In the text use `<sup>1</sup>` or `.fn[1]`
+
+[2] At the end of the slide `.footnote[[1] Text associated with footnote 1.]`
+]
+
+---
+
+class: columns-2
+
+## Equations
+
+
+MathJax is supported out of the box.  You can put inline equations inside dollar signs, e.g. `$\alpha + \beta$` renders as $\alpha + \beta$.   Display style works with double dollar signs: 
+
+<span>`$`</span><span>`$`</span>`\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i`<span>`$`</span><span>`$`</span>
+$$\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i$$
+For multi-line equations you can use <span>`\`</span>`begin{align} ...  `</span>`\`</span>`end{align}`
+\begin{align}
+\bar{X} & = X_1 + X_2 + \ldots + X_n \nonumber \\
+& = \frac{1}{n}\sum_{i=1}^nX_i \label{good-eq}
+\end{align}
+Note the equation number! We can reference it in the usual way, using <span>`\`</span>`eqref{label}`, \eqref{good-eq}, or <span>`\`</span>`ref{label}`, \ref{good-eq}.
+
+---
+
+## Citations and references
+
+.pull-left[
+Xaringan doesn't support bibliographies in the usual markdown way (i.e. specifying a bibtex file in the yaml).
+
+It is possible to cite sources from a `.bib` file using the **RefManageR** package.  To do this, specify the `BibOptions()`:
+
+```{r, eval = FALSE}
+library(RefManageR)
+BibOptions(
+check.entries = FALSE, 
+bib.style = "authoryear", 
+cite.style = "authoryear", 
+style = "markdown",
+hyperlink = FALSE, 
+dashed = FALSE)
+{{myBib = ReadBib("references.bib")}}
+```
+]
+
+
+.pull-right[
+
+Make sure you update the highlighted line.
+
+Then you can cite any entry from your `.bib` file inline using `Citet()`, `Citep()`, `AutoCite()`, etc. (see [RefManageR](https://github.com/ropensci/RefManageR)). 
+
+]
+
