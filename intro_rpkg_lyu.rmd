@@ -1,8 +1,6 @@
 ---
-title: "Spatial Causal Inference"
-subtitle: "spcausal : A Framework for Spatial Causal Inference"
+title: "R packages developed by SpatLyu"
 author: "Wenbo Lv"
-# institute: "Curtin Geospatial Intelligence Lab & HKUSTGZ AI4City Lab"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -45,7 +43,7 @@ font-family: 'Inconsolata', 'Consolas', Monaco, monospace;
 }
 
 .title-slide {
-  background-image: url("https://spatlyu.github.io/materials/figures/ai4city_ppt_title_bg1.png");
+  background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg1.png");
   background-position: center;
   background-size: contain;
 }
@@ -302,7 +300,7 @@ vistime(data, optimize_y = FALSE)
 
 ---
 class: center, middle
-background-image: url("https://spatlyu.github.io/materials/figures/ai4city_ppt_title_bg4.png")
+background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg3.png")
 background-position: center
 background-size: contain
 
