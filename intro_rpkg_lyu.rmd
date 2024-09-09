@@ -54,9 +54,9 @@ font-family: 'Inconsolata', 'Consolas', Monaco, monospace;
 ```{r pkgs_lyu,echo=FALSE,out.width="80%",out.height="50%"}
 knitr::include_graphics('./assets/pkgs_lyu.png')
 ```
-
 ]
 .right-column[
+
 - Geospatial Data of China
 > [geocn](https://stscl.github.io/geocn/)
 - Geospatial Processing
@@ -66,6 +66,7 @@ knitr::include_graphics('./assets/pkgs_lyu.png')
 > [sdsfun](https://stscl.github.io/sdsfun/)
 > [gdverse](https://ausgis.github.io/gdverse/)
 > [geocomplexity](https://ausgis.github.io/geocomplexity/)
+
 ]
 
 ---
