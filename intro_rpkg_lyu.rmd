@@ -10,6 +10,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
+      
 ---
 class: title-slide
 
@@ -50,19 +51,19 @@ font-family: 'Inconsolata', 'Consolas', Monaco, monospace;
 ```
 
 ---
-background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg3.png")
+background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg4.png")
 background-position: center
-background-size: contain, 50% 50%, cover
+background-size: contain
 
 .pull-left[
 
-# <span style="color: #4472c4",> Content </span>
+## <span style="color: #4472c4;display: block;margin-top: 70px;"> Content</span>
 
-### Geospatial Data of China
+#### Geospatial Data of China
 
 - [geocn](https://stscl.github.io/geocn/)
 
-### Geospatial Processing
+#### Geospatial Processing
 
 - [qgisprocess](https://r-spatial.github.io/qgisprocess/)
 
@@ -79,7 +80,7 @@ background-size: contain, 50% 50%, cover
 ]
 
 .pull-right[
-```{r pkgs_lyu,echo=FALSE,out.width="100%",out.height="80%"}
+```{r pkgs_lyu,echo=FALSE,out.width="80%",out.height="50%",fig.align='center'}
 knitr::include_graphics('./assets/pkgs_lyu.png')
 ```
 ]
@@ -141,6 +142,9 @@ background-size: contain, 50% 50%, cover
 [Evidence on the impact of sustained exposure to air pollution on life expectancy from China’s Huai River policy](https://www.pnas.org/doi/full/10.1073/pnas.1300018110)
 
 ---
+background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg3.png")
+background-position: center
+background-size: contain
 
 ## 3. Based on Spatial Epidemiology
 
