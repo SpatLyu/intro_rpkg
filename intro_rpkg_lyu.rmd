@@ -11,7 +11,6 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
 ---
-class: inverse, middle, top
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE,
@@ -49,9 +48,25 @@ font-family: 'Inconsolata', 'Consolas', Monaco, monospace;
 }
 ```
 
-# Causal Inference Methods In Geography
+## Content
 
-.footnote[The following is a Discipline-based perspective]
+.left-column[
+```{r pkgs_lyu,echo=FALSE,out.width="80%",out.height="50%"}
+knitr::include_graphics('./assets/pkgs_lyu.png')
+```
+
+]
+.right-column[
+- Geospatial Data of China
+> [geocn](https://stscl.github.io/geocn/)
+- Geospatial Processing
+> [qgisprocess](https://r-spatial.github.io/qgisprocess/)
+> [Rsagacmd](https://stevenpawley.github.io/Rsagacmd/)
+- Geospatial Methods
+> [sdsfun](https://stscl.github.io/sdsfun/)
+> [gdverse](https://ausgis.github.io/gdverse/)
+> [geocomplexity](https://ausgis.github.io/geocomplexity/)
+]
 
 ---
 
