@@ -11,6 +11,7 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
 ---
+class: title-slide
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE,
@@ -48,20 +49,31 @@ font-family: 'Inconsolata', 'Consolas', Monaco, monospace;
 }
 ```
 
+---
+background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg3.png")
+background-position: center
+background-size: contain, 50% 50%, cover
+
 .pull-left[
 
-# Content
+# <span style="color: #4472c4",> Content </span>
 
 ### Geospatial Data of China
+
 - [geocn](https://stscl.github.io/geocn/)
 
 ### Geospatial Processing
+
 - [qgisprocess](https://r-spatial.github.io/qgisprocess/)
+
 - [Rsagacmd](https://stevenpawley.github.io/Rsagacmd/)
 
-### Geospatial Methods
+#### Geospatial Methods
+
 - [sdsfun](https://stscl.github.io/sdsfun/)
+
 - [gdverse](https://ausgis.github.io/gdverse/)
+
 - [geocomplexity](https://ausgis.github.io/geocomplexity/)
 
 ]
@@ -73,6 +85,9 @@ knitr::include_graphics('./assets/pkgs_lyu.png')
 ]
 
 ---
+background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg3.png")
+background-position: center
+background-size: contain, 50% 50%, cover
 
 ## 1. Based on Spatial Statistics
 
@@ -103,6 +118,9 @@ knitr::include_graphics('./assets/pkgs_lyu.png')
 [Spatial Causality: A Systematic Review on Spatial Causal Inference](https://onlinelibrary.wiley.com/doi/abs/10.1111/gean.12312)
 
 ---
+background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg3.png")
+background-position: center
+background-size: contain, 50% 50%, cover
 
 ## 2. Based on Spatial Econometrics
 
