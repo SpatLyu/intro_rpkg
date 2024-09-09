@@ -11,7 +11,7 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
 ---
-class: inverse, middle, center
+class: inverse, middle, top
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE,
