@@ -391,7 +391,7 @@ background-size: contain
 
 .pull-left[
 
-## <span style="color: ##5b7b75;display: block;margin-top: 100px;"> [gdverse](https://ausgis.github.io/gdverse/)</span>
+## <span style="color: ##5b7b75;display: block;margin-top: 60px;"> [gdverse](https://ausgis.github.io/gdverse/)</span>
 
 #### Geographical Detector Models
 
@@ -406,9 +406,11 @@ gozh.bi
 --
 
 .pull-right[
+
 <div class="center-img">
-<img src="./assets/figures/gozh.png" style="margin-top: 200px; width: 80%; height: auto;" />
+<img src="./assets/figures/gozh.png" style="margin-top: 100px; width: 80%; height: auto;" />
 </div>
+
 ]
 
 ---
