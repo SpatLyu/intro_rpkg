@@ -316,28 +316,37 @@ background-size: contain
 --
 
 .pull-left[
-<div style="margin-top: 70px;">
-
-<pre><code>
+```{r}
 library(sf)
-librarY(sdsfun)
+library(sdsfun)
 pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun'))
 
 wt1 = spdep_distance_swm(pts, style = 'B')
 wt2 = spdep_distance_swm(pts, kernel = 'gaussian')
 wt3 = spdep_distance_swm(pts, k = 3, kernel = 'gaussian')
 wt4 = spdep_distance_swm(pts, k = 3, kernel = 'gaussian', bandwidth = 10000)
-</code></pre>
-</div>
+wt4[1:5,1:5]
+```
+
+<!-- <div style="margin-top: 70px;"> -->
+<!-- <pre><code> -->
+<!-- library(sf) -->
+<!-- library(sdsfun) -->
+<!-- pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun')) -->
+
+<!-- wt1 = spdep_distance_swm(pts, style = 'B') -->
+<!-- wt2 = spdep_distance_swm(pts, kernel = 'gaussian') -->
+<!-- wt3 = spdep_distance_swm(pts, k = 3, kernel = 'gaussian') -->
+<!-- wt4 = spdep_distance_swm(pts, k = 3, kernel = 'gaussian', bandwidth = 10000) -->
+<!-- </code></pre> -->
+<!-- </div> -->
 ]
 
 --
 
 .pull-right[
 
-<div style="margin-top: 70px;">
-
-<pre><code>
+```{r}
 library(sf)
 library(sdsfun)
 pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun'))
@@ -345,7 +354,21 @@ pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun'))
 wt1 = spdep_contiguity_swm(pts, k = 6, style = 'B')
 wt2 = spdep_contiguity_swm(pts, queen = TRUE, style = 'B')
 wt3 = spdep_contiguity_swm(pts, queen = FALSE, order = 2, style = 'B')
-</code></pre>
+wt3[1:5,1:5]
+```
+
+
+<!-- <div style="margin-top: 70px;"> -->
+
+<!-- <pre><code> -->
+<!-- library(sf) -->
+<!-- library(sdsfun) -->
+<!-- pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun')) -->
+
+<!-- wt1 = spdep_contiguity_swm(pts, k = 6, style = 'B') -->
+<!-- wt2 = spdep_contiguity_swm(pts, queen = TRUE, style = 'B') -->
+<!-- wt3 = spdep_contiguity_swm(pts, queen = FALSE, order = 2, style = 'B') -->
+<!-- </code></pre> -->
 
 ]
 
@@ -390,7 +413,7 @@ RD
 ]
 
 .pull-right[
-<img src="./assets/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" />
+<img src="./assets/figures/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" />
 ]
 
 ---

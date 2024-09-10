@@ -318,28 +318,48 @@ background-size: contain
 --
 
 .pull-left[
-&lt;div style="margin-top: 70px;"&gt;
 
-&lt;pre&gt;&lt;code&gt;
+``` r
 library(sf)
-librarY(sdsfun)
+library(sdsfun)
 pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun'))
 
 wt1 = spdep_distance_swm(pts, style = 'B')
 wt2 = spdep_distance_swm(pts, kernel = 'gaussian')
 wt3 = spdep_distance_swm(pts, k = 3, kernel = 'gaussian')
 wt4 = spdep_distance_swm(pts, k = 3, kernel = 'gaussian', bandwidth = 10000)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+wt4[1:5,1:5]
+```
+
+```
+##         [,1]      [,2]       [,3]       [,4]       [,5]
+## 1 0.09009766 0.0000000 0.07505186 0.00000000 0.00000000
+## 2 0.00000000 0.1374176 0.00000000 0.00000000 0.00000000
+## 3 0.05593666 0.0000000 0.06715040 0.00000000 0.00000000
+## 4 0.00000000 0.0000000 0.00000000 0.08275632 0.00000000
+## 5 0.00000000 0.0000000 0.00000000 0.00000000 0.07064708
+```
+
+&lt;!-- &lt;div style="margin-top: 70px;"&gt; --&gt;
+&lt;!-- &lt;pre&gt;&lt;code&gt; --&gt;
+&lt;!-- library(sf) --&gt;
+&lt;!-- library(sdsfun) --&gt;
+&lt;!-- pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun')) --&gt;
+
+&lt;!-- wt1 = spdep_distance_swm(pts, style = 'B') --&gt;
+&lt;!-- wt2 = spdep_distance_swm(pts, kernel = 'gaussian') --&gt;
+&lt;!-- wt3 = spdep_distance_swm(pts, k = 3, kernel = 'gaussian') --&gt;
+&lt;!-- wt4 = spdep_distance_swm(pts, k = 3, kernel = 'gaussian', bandwidth = 10000) --&gt;
+&lt;!-- &lt;/code&gt;&lt;/pre&gt; --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
 ]
 
 --
 
 .pull-right[
 
-&lt;div style="margin-top: 70px;"&gt;
 
-&lt;pre&gt;&lt;code&gt;
+``` r
 library(sf)
 library(sdsfun)
 pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun'))
@@ -347,7 +367,30 @@ pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun'))
 wt1 = spdep_contiguity_swm(pts, k = 6, style = 'B')
 wt2 = spdep_contiguity_swm(pts, queen = TRUE, style = 'B')
 wt3 = spdep_contiguity_swm(pts, queen = FALSE, order = 2, style = 'B')
-&lt;/code&gt;&lt;/pre&gt;
+wt3[1:5,1:5]
+```
+
+```
+##   [,1] [,2] [,3] [,4] [,5]
+## 1    0    1    1    1    1
+## 2    1    0    1    1    1
+## 3    1    1    0    1    1
+## 4    1    1    1    0    1
+## 5    1    1    1    1    0
+```
+
+
+&lt;!-- &lt;div style="margin-top: 70px;"&gt; --&gt;
+
+&lt;!-- &lt;pre&gt;&lt;code&gt; --&gt;
+&lt;!-- library(sf) --&gt;
+&lt;!-- library(sdsfun) --&gt;
+&lt;!-- pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun')) --&gt;
+
+&lt;!-- wt1 = spdep_contiguity_swm(pts, k = 6, style = 'B') --&gt;
+&lt;!-- wt2 = spdep_contiguity_swm(pts, queen = TRUE, style = 'B') --&gt;
+&lt;!-- wt3 = spdep_contiguity_swm(pts, queen = FALSE, order = 2, style = 'B') --&gt;
+&lt;!-- &lt;/code&gt;&lt;/pre&gt; --&gt;
 
 ]
 
@@ -392,7 +435,7 @@ RD
 ]
 
 .pull-right[
-&lt;img src="./assets/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" /&gt;
+&lt;img src="./assets/figures/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" /&gt;
 ]
 
 ---
