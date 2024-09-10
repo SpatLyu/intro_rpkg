@@ -67,32 +67,17 @@ background-size: contain
 
 .pull-left[
 
---
-
 #### [<span style="color: #5b7b75;display: block;margin-top: 120px;"> Geocomputation with R </span>](https://r.geocompx.org/)
 
---
-
-#### [<span style="color: #5b7b75;"> Spatial Data Science
-With Applications in R </span>](https://r-spatial.org/book/)
-
---
+#### [<span style="color: #5b7b75;"> Spatial Data Science With Applications in R </span>](https://r-spatial.org/book/)
 
 #### [<span style="color: #5b7b75;"> Spatial data with terra </span>](https://rspatial.org/spatial/index.html)
 
---
-
 #### [<span style="color: #5b7b75;"> Introduction to BaseR </span>](https://rspatial.org/intr/)
-
---
 
 #### [<span style="color: #5b7b75;"> Advanced R </span>](https://adv-r.hadley.nz/)
 
---
-
 #### [<span style="color: #5b7b75;"> R for Data Science (2e) & tidyverse </span>](https://r4ds.hadley.nz/)
-
---
 
 #### [<span style="color: #5b7b75;"> Unofficial Rcpp Api Documentation </span>](https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation/)
 
@@ -105,9 +90,19 @@ With Applications in R </span>](https://r-spatial.org/book/)
 ]
 
 ---
+class: inverse, middle, center
+background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg3.png")
+background-position: center
+background-size: contain
+
+# R packages developed by Wenbo Lv and his partners
+
+---
 background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg4.png")
 background-position: center
 background-size: contain
+
+--
 
 .pull-left[
 
@@ -132,6 +127,8 @@ background-size: contain
 - [geocomplexity](https://ausgis.github.io/geocomplexity/)
 
 ]
+
+--
 
 .pull-right[
 ```{r pkgs_lyu,echo=FALSE,out.width="80%",out.height="50%",fig.align='center'}
