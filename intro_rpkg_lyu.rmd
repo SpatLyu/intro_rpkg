@@ -131,9 +131,7 @@ background-size: contain
 --
 
 .pull-right[
-```{r echo=FALSE,out.width="80%",out.height="50%",fig.align='center'}
-knitr::include_graphics('./assets/pkgs_lyu.png')
-```
+<img src="./assets/pkgs_lyu.png" style="margin-top: 120px; width: 80%; height: auto;" />
 ]
 
 ---
