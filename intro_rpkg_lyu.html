@@ -180,6 +180,52 @@ ggplot(data = province_albers) +
 ]
 
 ---
+background-image: url("./assets/pkgs.jpg")
+background-position: center
+background-size: contain
+
+--
+
+.pull-left[
+
+
+``` r
+library(sf)
+library(geocn)
+library(ggplot2)
+
+world1 = load_world_country(center = "west")
+ggplot(data = world1) +
+  geom_sf(fill = 'grey90', color = 'grey') +
+  theme_bw()
+```
+
+&lt;img src="intro_rpkg_lyu_files/figure-html/world1-1.png" width="50%" height="50%" style="display: block; margin: auto;" /&gt;
+
+]
+
+--
+
+.pull-right[
+
+
+``` r
+library(sf)
+library(geocn)
+library(ggplot2)
+
+world2 = load_world_country(center = "east")
+ggplot(data = world2) +
+  geom_sf(fill = 'grey90', color = 'grey') +
+  theme_bw()
+```
+
+&lt;img src="intro_rpkg_lyu_files/figure-html/world2-1.png" width="50%" height="50%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
 class: center, middle
 background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg3.png")
 background-position: center

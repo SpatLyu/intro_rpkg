@@ -23,6 +23,7 @@ knitr::opts_chunk$set(echo = TRUE,
                       out.height = "400px",
                       fig.align = 'center',
                       comment = "##",
+                      fig.path = "assets/figures",
                       htmltools.dir.version = FALSE)
 ```
 
@@ -175,6 +176,46 @@ ggplot(data = province_albers) +
 .pull-right[
 <img src="./assets/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" />
 ]
+
+---
+background-image: url("./assets/pkgs.jpg")
+background-position: center
+background-size: contain
+
+--
+
+.pull-left[
+
+```{r world1,out.height="50%",out.width="50%",fig.width=4.5,fig.height=3}
+library(sf)
+library(geocn)
+library(ggplot2)
+
+world1 = load_world_country(center = "west")
+ggplot(data = world1) +
+  geom_sf(fill = 'grey90', color = 'grey') +
+  theme_bw()
+```
+
+]
+
+--
+
+.pull-right[
+
+```{r world2,out.height="50%",out.width="50%",fig.width=4.5,fig.height=3}
+library(sf)
+library(geocn)
+library(ggplot2)
+
+world2 = load_world_country(center = "east")
+ggplot(data = world2) +
+  geom_sf(fill = 'grey90', color = 'grey') +
+  theme_bw()
+```
+
+]
+
 
 ---
 class: center, middle
