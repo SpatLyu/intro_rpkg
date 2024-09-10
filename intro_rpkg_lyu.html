@@ -60,6 +60,10 @@ font-family: 'Inconsolata', 'Consolas', Monaco, monospace;
       overflow: auto;
       border-radius: 4px;
     }
+    
+.center-img {
+    text-align: center;
+  }
 &lt;/style&gt;
 
 ---
@@ -187,7 +191,9 @@ ggplot(data = province_albers) +
 --
 
 .pull-right[
-&lt;img src="./assets/figures/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" /&gt;
+&lt;div class="center-img"&gt;
+&lt;img src="./assets/figures/fig1.png" style="margin-top: 120px; width: 70%; height: auto;" /&gt;
+&lt;/div&gt;
 ]
 
 ---
@@ -273,7 +279,9 @@ qgis_run_algorithm(
 --
 
 .pull-right[
-&lt;img src="./assets/figures/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" /&gt;
+&lt;div class="center-img"&gt;
+&lt;img src="./assets/figures/rd.png" style="margin-top: 100px; height: 50%; width: auto;" /&gt;
+&lt;/div&gt;
 ]
 
 ---
@@ -307,7 +315,9 @@ ggplot() +
 --
 
 .pull-right[
-&lt;img src="./assets/figures/voronoi.png" style="margin-top: 120px; width: 80%; height: auto;" /&gt;
+&lt;div class="center-img"&gt;
+&lt;img src="./assets/figures/voronoi.png" style="margin-top: 100px; width: 80%; height: auto;" /&gt;
+&lt;/div&gt;
 ]
 
 ---
@@ -394,6 +404,58 @@ wt3[1:5,1:5]
 
 ]
 
+---
+background-image: url("./assets/pkgs.jpg")
+background-position: center
+background-size: contain
+
+--
+
+.pull-left[
+
+## &lt;span style="color: ##5b7b75;display: block;margin-top: 100px;"&gt; [gdverse](https://ausgis.github.io/gdverse/)&lt;/span&gt;
+
+#### Geographical Detector Models
+
+
+``` r
+library(gdverse)
+gozh.bi = gozh(NDVIchange ~ ., data = ndvi, type = 'interaction')
+gozh.bi
+```
+
+```
+##                 GOZH Model                  
+## ***        Interaction Detector         
+## 
+## |    Interactive variable     |    Interaction     |
+## |:---------------------------:|:------------------:|
+## |    Climatezone ∩ Mining     |    Weaken, uni-    |
+## |  Climatezone ∩ Tempchange   |    Weaken, uni-    |
+## | Climatezone ∩ Precipitation |    Enhance, bi-    |
+## |      Climatezone ∩ GDP      |    Enhance, bi-    |
+## |  Climatezone ∩ Popdensity   |    Enhance, bi-    |
+## |     Mining ∩ Tempchange     |    Enhance, bi-    |
+## |   Mining ∩ Precipitation    |    Weaken, uni-    |
+## |        Mining ∩ GDP         |    Enhance, bi-    |
+## |     Mining ∩ Popdensity     |    Enhance, bi-    |
+## | Tempchange ∩ Precipitation  |    Enhance, bi-    |
+## |      Tempchange ∩ GDP       | Enhance, nonlinear |
+## |   Tempchange ∩ Popdensity   |    Enhance, bi-    |
+## |     Precipitation ∩ GDP     |    Enhance, bi-    |
+## | Precipitation ∩ Popdensity  |    Enhance, bi-    |
+## |      GDP ∩ Popdensity       |    Weaken, uni-    |
+```
+
+]
+
+--
+
+.pull-right[
+&lt;div class="center-img"&gt;
+&lt;img src="./assets/figures/gozh.png" style="margin-top: 200px; width: 80%; height: auto;" /&gt;
+&lt;/div&gt;
+]
 
 ---
 background-image: url("./assets/pkgs.jpg")
@@ -404,81 +466,32 @@ background-size: contain
 
 .pull-left[
 
-## &lt;span style="color: #4472c4;display: block;margin-top: 80px;"&gt; [qgisprocess](https://r-spatial.github.io/qgisprocess/)&lt;/span&gt;
+## &lt;span style="color: ##91a5addisplay: block;margin-top: 80px;"&gt; [geocomplexity](https://ausgis.github.io/geocomplexity/)&lt;/span&gt;
 
-#### Use QGIS Processing Algorithms in R
+#### Geocomplexity Mitigates Spatial Bias
 
 ```r
-library(qgisprocess)
+library(geocomplexity)
+data("income")
+inc = dplyr::select(income,Income)
+gc = geocd_vector(inc)
 
-# Load data
-road = read_sf('./data/osm.gdb/',layer='road') |&gt; 
-  st_transform(32649)
-
-# Weighting according to road type
-road |&gt; 
-  dplyr::mutate(weight = dplyr::case_match(highway,
-                              c('motorway','primary') ~ 5,
-                              c('motorway_link','primary_link','trunk','secondary') ~ 4,
-                              c('trunk_link','secondary_link','tertiary') ~ 3,
-                              c('tertiary_link','residential') ~ 2,
-                              .default = 1)) -&gt; road
-
-qgis_run_algorithm(
-  algorithm = "native:linedensity",INPUT = road,
-  WEIGHT = "weight",RADIUS = 90,PIXEL_SIZE = 30) |&gt; 
-  qgis_as_terra()-&gt; RD
-
-RD
+library(ggplot2)
+library(viridis)
+ggplot(gc) +
+   geom_sf(aes(fill = GC_Income)) +
+   scale_fill_viridis(option="mako", direction = -1) +
+   theme_bw()
 ```
 
 ]
-
-.pull-right[
-&lt;img src="./assets/figures/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" /&gt;
-]
-
----
-background-image: url("./assets/pkgs.jpg")
-background-position: center
-background-size: contain
 
 --
 
-.pull-left[
-
-## &lt;span style="color: #4472c4;display: block;margin-top: 80px;"&gt; [qgisprocess](https://r-spatial.github.io/qgisprocess/)&lt;/span&gt;
-
-#### Use QGIS Processing Algorithms in R
-
-```r
-library(qgisprocess)
-
-# Load data
-road = read_sf('./data/osm.gdb/',layer='road') |&gt; 
-  st_transform(32649)
-
-# Weighting according to road type
-road |&gt; 
-  dplyr::mutate(weight = dplyr::case_match(highway,
-                              c('motorway','primary') ~ 5,
-                              c('motorway_link','primary_link','trunk','secondary') ~ 4,
-                              c('trunk_link','secondary_link','tertiary') ~ 3,
-                              c('tertiary_link','residential') ~ 2,
-                              .default = 1)) -&gt; road
-
-qgis_run_algorithm(
-  algorithm = "native:linedensity",INPUT = road,
-  WEIGHT = "weight",RADIUS = 90,PIXEL_SIZE = 30) |&gt; 
-  qgis_as_terra()-&gt; RD
-
-RD
-```
-
-]
-
 .pull-right[
-&lt;img src="./assets/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" /&gt;
+&lt;div class="center-img"&gt;
+&lt;img src="./assets/figures/gc.png" style="margin-top: 120px; height: 80%; width: auto;" /&gt;
+&lt;/div&gt;
 ]
 
 ---

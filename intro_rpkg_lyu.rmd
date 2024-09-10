@@ -58,6 +58,10 @@ font-family: 'Inconsolata', 'Consolas', Monaco, monospace;
       overflow: auto;
       border-radius: 4px;
     }
+    
+.center-img {
+    text-align: center;
+  }
 ```
 
 ---
@@ -185,7 +189,9 @@ ggplot(data = province_albers) +
 --
 
 .pull-right[
-<img src="./assets/figures/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" />
+<div class="center-img">
+<img src="./assets/figures/fig1.png" style="margin-top: 120px; width: 70%; height: auto;" />
+</div>
 ]
 
 ---
@@ -271,7 +277,9 @@ qgis_run_algorithm(
 --
 
 .pull-right[
-<img src="./assets/figures/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" />
+<div class="center-img">
+<img src="./assets/figures/rd.png" style="margin-top: 100px; height: 50%; width: auto;" />
+</div>
 ]
 
 ---
@@ -305,7 +313,9 @@ ggplot() +
 --
 
 .pull-right[
-<img src="./assets/figures/voronoi.png" style="margin-top: 120px; width: 80%; height: auto;" />
+<div class="center-img">
+<img src="./assets/figures/voronoi.png" style="margin-top: 100px; width: 80%; height: auto;" />
+</div>
 ]
 
 ---
@@ -372,7 +382,6 @@ wt3[1:5,1:5]
 
 ]
 
-
 ---
 background-image: url("./assets/pkgs.jpg")
 background-position: center
@@ -382,38 +391,24 @@ background-size: contain
 
 .pull-left[
 
-## <span style="color: #4472c4;display: block;margin-top: 80px;"> [qgisprocess](https://r-spatial.github.io/qgisprocess/)</span>
+## <span style="color: ##5b7b75;display: block;margin-top: 100px;"> [gdverse](https://ausgis.github.io/gdverse/)</span>
 
-#### Use QGIS Processing Algorithms in R
+#### Geographical Detector Models
 
-```r
-library(qgisprocess)
-
-# Load data
-road = read_sf('./data/osm.gdb/',layer='road') |> 
-  st_transform(32649)
-
-# Weighting according to road type
-road |> 
-  dplyr::mutate(weight = dplyr::case_match(highway,
-                              c('motorway','primary') ~ 5,
-                              c('motorway_link','primary_link','trunk','secondary') ~ 4,
-                              c('trunk_link','secondary_link','tertiary') ~ 3,
-                              c('tertiary_link','residential') ~ 2,
-                              .default = 1)) -> road
-
-qgis_run_algorithm(
-  algorithm = "native:linedensity",INPUT = road,
-  WEIGHT = "weight",RADIUS = 90,PIXEL_SIZE = 30) |> 
-  qgis_as_terra()-> RD
-
-RD
+```{r}
+library(gdverse)
+gozh.bi = gozh(NDVIchange ~ ., data = ndvi, type = 'interaction')
+gozh.bi
 ```
 
 ]
 
+--
+
 .pull-right[
-<img src="./assets/figures/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" />
+<div class="center-img">
+<img src="./assets/figures/gozh.png" style="margin-top: 200px; width: 80%; height: auto;" />
+</div>
 ]
 
 ---
@@ -425,38 +420,32 @@ background-size: contain
 
 .pull-left[
 
-## <span style="color: #4472c4;display: block;margin-top: 80px;"> [qgisprocess](https://r-spatial.github.io/qgisprocess/)</span>
+## <span style="color: ##91a5addisplay: block;margin-top: 80px;"> [geocomplexity](https://ausgis.github.io/geocomplexity/)</span>
 
-#### Use QGIS Processing Algorithms in R
+#### Geocomplexity Mitigates Spatial Bias
 
 ```r
-library(qgisprocess)
+library(geocomplexity)
+data("income")
+inc = dplyr::select(income,Income)
+gc = geocd_vector(inc)
 
-# Load data
-road = read_sf('./data/osm.gdb/',layer='road') |> 
-  st_transform(32649)
-
-# Weighting according to road type
-road |> 
-  dplyr::mutate(weight = dplyr::case_match(highway,
-                              c('motorway','primary') ~ 5,
-                              c('motorway_link','primary_link','trunk','secondary') ~ 4,
-                              c('trunk_link','secondary_link','tertiary') ~ 3,
-                              c('tertiary_link','residential') ~ 2,
-                              .default = 1)) -> road
-
-qgis_run_algorithm(
-  algorithm = "native:linedensity",INPUT = road,
-  WEIGHT = "weight",RADIUS = 90,PIXEL_SIZE = 30) |> 
-  qgis_as_terra()-> RD
-
-RD
+library(ggplot2)
+library(viridis)
+ggplot(gc) +
+   geom_sf(aes(fill = GC_Income)) +
+   scale_fill_viridis(option="mako", direction = -1) +
+   theme_bw()
 ```
 
 ]
 
+--
+
 .pull-right[
-<img src="./assets/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" />
+<div class="center-img">
+<img src="./assets/figures/gc.png" style="margin-top: 120px; height: 80%; width: auto;" />
+</div>
 ]
 
 ---
