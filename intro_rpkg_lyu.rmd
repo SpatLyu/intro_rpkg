@@ -49,6 +49,15 @@ font-family: 'Inconsolata', 'Consolas', Monaco, monospace;
   background-position: center;
   background-size: contain;
 }
+
+.pre {
+      background-color: #ddd;
+      border: 5px solid #ddd;
+      padding: 10px;
+      font-size: 14px;
+      overflow: auto;
+      border-radius: 4px;
+    }
 ```
 
 ---
@@ -107,7 +116,7 @@ background-size: contain
 
 .pull-left[
 
-## <span style="color: #4472c4;display: block;margin-top: 70px;"> Content</span>
+## <span style="color: #4472c4;margin-top: 60px;">Content</span>
 
 #### Geospatial Data of China
 
@@ -132,7 +141,9 @@ background-size: contain
 --
 
 .pull-right[
-<img src="./assets/pkgs_lyu.png" style="margin-top: 120px; width: 80%; height: auto;" />
+
+<img src="./assets/pkgs_lyu.png"; style="margin-bottom: 10px;width: 80%; height: auto;" />
+
 ]
 
 ---
@@ -185,8 +196,9 @@ background-size: contain
 --
 
 .pull-left[
+<div style="margin-top: 70px;">
 
-```{r world1,out.height="50%",out.width="50%",fig.width=4.5,fig.height=2.5}
+<pre><code>
 library(sf)
 library(geocn)
 library(ggplot2)
@@ -195,15 +207,19 @@ world1 = load_world_country(center = "west")
 ggplot(data = world1) +
   geom_sf(fill = 'grey90', color = 'grey') +
   theme_bw()
-```
+</code></pre>
+<img src="./assets/figures/world1.png";width: 80%; height: auto;" />
 
+</div>
 ]
 
 --
 
 .pull-right[
 
-```{r world2,out.height="50%",out.width="50%",fig.width=4.5,fig.height=2.5}
+<div style="margin-top: 70px;">
+
+<pre><code>
 library(sf)
 library(geocn)
 library(ggplot2)
@@ -212,8 +228,10 @@ world2 = load_world_country(center = "east")
 ggplot(data = world2) +
   geom_sf(fill = 'grey90', color = 'grey') +
   theme_bw()
-```
+</code></pre>
 
+<img src="./assets/figures/world2.png";width: 80%; height: auto;" />
+</div>
 ]
 
 

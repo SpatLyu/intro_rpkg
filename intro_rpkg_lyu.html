@@ -51,6 +51,15 @@ font-family: 'Inconsolata', 'Consolas', Monaco, monospace;
   background-position: center;
   background-size: contain;
 }
+
+.pre {
+      background-color: #ddd;
+      border: 5px solid #ddd;
+      padding: 10px;
+      font-size: 14px;
+      overflow: auto;
+      border-radius: 4px;
+    }
 &lt;/style&gt;
 
 ---
@@ -109,7 +118,7 @@ background-size: contain
 
 .pull-left[
 
-## &lt;span style="color: #4472c4;display: block;margin-top: 70px;"&gt; Content&lt;/span&gt;
+## &lt;span style="color: #4472c4;margin-top: 60px;"&gt;Content&lt;/span&gt;
 
 #### Geospatial Data of China
 
@@ -134,7 +143,9 @@ background-size: contain
 --
 
 .pull-right[
-&lt;img src="./assets/pkgs_lyu.png" style="margin-top: 120px; width: 80%; height: auto;" /&gt;
+
+&lt;img src="./assets/pkgs_lyu.png"; style="margin-bottom: 10px;width: 80%; height: auto;" /&gt;
+
 ]
 
 ---
@@ -187,9 +198,9 @@ background-size: contain
 --
 
 .pull-left[
+&lt;div style="margin-top: 70px;"&gt;
 
-
-``` r
+&lt;pre&gt;&lt;code&gt;
 library(sf)
 library(geocn)
 library(ggplot2)
@@ -198,18 +209,19 @@ world1 = load_world_country(center = "west")
 ggplot(data = world1) +
   geom_sf(fill = 'grey90', color = 'grey') +
   theme_bw()
-```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src="./assets/figures/world1.png";width: 80%; height: auto;" /&gt;
 
-&lt;img src="assets/figures/world1-1.png" width="50%" height="50%" style="display: block; margin: auto;" /&gt;
-
+&lt;/div&gt;
 ]
 
 --
 
 .pull-right[
 
+&lt;div style="margin-top: 70px;"&gt;
 
-``` r
+&lt;pre&gt;&lt;code&gt;
 library(sf)
 library(geocn)
 library(ggplot2)
@@ -218,10 +230,10 @@ world2 = load_world_country(center = "east")
 ggplot(data = world2) +
   geom_sf(fill = 'grey90', color = 'grey') +
   theme_bw()
-```
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;img src="assets/figures/world2-1.png" width="50%" height="50%" style="display: block; margin: auto;" /&gt;
-
+&lt;img src="./assets/figures/world2.png";width: 80%; height: auto;" /&gt;
+&lt;/div&gt;
 ]
 
 
