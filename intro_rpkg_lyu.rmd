@@ -287,7 +287,7 @@ qgis_run_algorithm(
 
 .pull-right[
 <div class="center-img">
-<img src="./assets/figures/rd.png" style="margin-top: 120px; height: 50%; width: auto;" />
+<img src="./assets/figures/rd.png" style="margin-top: 80px; height: 50%; width: auto;" />
 </div>
 ]
 
@@ -375,7 +375,7 @@ background-size: contain
 
 .pull-left[
 
-## <a href="https://ausgis.github.io/gdverse/"><span style="color: #5b7b75;display: block;margin-top: 60px;">gdverse</span><a>
+## <a href="https://ausgis.github.io/gdverse/"><span style="color: #5b7b75;display: block;margin-top: 60px;">gdverse</span></a>
 
 #### Geographical Detector Models
 
@@ -441,6 +441,6 @@ background-size: contain
 
 # Thanks
 
-### [Wenbo Lv](https://spatlyu.github.io/)
+### <a href="https://spatlyu.github.io/"><span style="color: #040707;">Wenbo Lv</span></a>
 
-### [lyu.geosocial@gmail.com](mailto:lyu.geosocial@gmail.com)
+### <a href="mailto:lyu.geosocial@gmail.com"><span style="color: #040707;">lyu.geosocial@gmail.com</span></a>
