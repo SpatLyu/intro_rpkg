@@ -51,6 +51,42 @@ font-family: 'Inconsolata', 'Consolas', Monaco, monospace;
 ```
 
 ---
+class: inverse, middle, center
+background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg3.png")
+background-position: center
+background-size: contain
+
+# R Learning materials
+
+---
+background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg4.png")
+background-position: center
+background-size: contain
+
+.pull-left[
+
+[<span style="color: #4472c4;display: block;margin-top: 70px;"> Geocomputation with R </span>](https://r.geocompx.org/)
+
+[<span style="color: #4472c4;"> Spatial Data Science
+With Applications in R </span>](https://r-spatial.org/book/)
+
+[<span style="color: #4472c4;"> Spatial data with terra </span>](https://rspatial.org/spatial/index.html)
+
+[<span style="color: #4472c4;"> Introduction to BaseR </span>](https://rspatial.org/intr/)
+
+[<span style="color: #4472c4;"> Advanced R </span>](https://adv-r.hadley.nz/)
+
+[<span style="color: #4472c4;"> R for Data Science (2e) & tidyverse </span>](https://r4ds.hadley.nz/)
+
+[<span style="color: #4472c4;"> Unofficial Rcpp Api Documentation </span>](https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation/)
+
+
+
+
+
+]
+
+---
 background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg4.png")
 background-position: center
 background-size: contain
