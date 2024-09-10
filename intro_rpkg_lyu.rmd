@@ -172,10 +172,10 @@ ggplot(data = province_albers) +
 
 ]
 
+--
+
 .pull-right[
-```{r echo=FALSE,out.width="50%",out.height="50%",fig.align='center'}
-knitr::include_graphics('./assets/fig1.png')
-```
+<img src="./assets/fig1.png" style="margin-top: 120px; width: 50%; height: auto;" />
 ]
 
 ---
