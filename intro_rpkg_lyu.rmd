@@ -131,7 +131,7 @@ background-size: contain
 --
 
 .pull-right[
-```{r pkgs_lyu,echo=FALSE,out.width="80%",out.height="50%",fig.align='center'}
+```{r echo=FALSE,out.width="80%",out.height="50%",fig.align='center'}
 knitr::include_graphics('./assets/pkgs_lyu.png')
 ```
 ]
@@ -143,6 +143,40 @@ background-position: center
 background-size: contain
 
 # Tutorials for My Open Source Geospatial Packages
+
+---
+background-image: url("./assets/pkgs.jpg")
+background-position: center
+background-size: contain
+
+--
+
+.pull-left[
+
+## <span style="color: #4472c4;display: block;margin-top: 70px;"> [geocn](https://stscl.github.io/geocn/)</span>
+
+#### Loads Spatial Data Sets of China
+
+```r
+library(sf)
+library(geocn)
+library(ggplot2)
+
+albers = load_cn_alberproj()
+province = load_cn_province()
+province_albers = st_transform(province,albers)
+ggplot(data = province_albers) +
+  geom_sf(fill = 'grey90', color = 'grey') +
+  theme_bw()
+```
+
+]
+
+.pull-right[
+```{r echo=FALSE,out.width="50%",out.height="50%",fig.align='center'}
+knitr::include_graphics('./assets/fig1.png')
+```
+]
 
 ---
 class: center, middle

@@ -146,6 +146,38 @@ background-size: contain
 # Tutorials for My Open Source Geospatial Packages
 
 ---
+background-image: url("./assets/pkgs.jpg")
+background-position: center
+background-size: contain
+
+--
+
+.pull-left[
+
+## &lt;span style="color: #4472c4;display: block;margin-top: 70px;"&gt; [geocn](https://stscl.github.io/geocn/)&lt;/span&gt;
+
+#### Loads Spatial Data Sets of China
+
+```r
+library(sf)
+library(geocn)
+library(ggplot2)
+
+albers = load_cn_alberproj()
+province = load_cn_province()
+province_albers = st_transform(province,albers)
+ggplot(data = province_albers) +
+  geom_sf(fill = 'grey90', color = 'grey') +
+  theme_bw()
+```
+
+]
+
+.pull-right[
+&lt;img src="./assets/fig1.png" width="50%" height="50%" style="display: block; margin: auto;" /&gt;
+]
+
+---
 class: center, middle
 background-image: url("https://spatlyu.github.io/materials/figures/ausgis_ppt_title_bg3.png")
 background-position: center
