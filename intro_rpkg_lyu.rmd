@@ -185,7 +185,7 @@ ggplot(data = province_albers) +
 --
 
 .pull-right[
-<img src="./assets/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" />
+<img src="./assets/figures/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" />
 ]
 
 ---
@@ -234,6 +234,207 @@ ggplot(data = world2) +
 </div>
 ]
 
+---
+background-image: url("./assets/pkgs.jpg")
+background-position: center
+background-size: contain
+
+--
+
+.pull-left[
+
+## <span style="color: #4472c4;display: block;margin-top: 70px;"> [qgisprocess](https://r-spatial.github.io/qgisprocess/)</span>
+
+#### Use QGIS Processing Algorithms in R
+
+```r
+library(qgisprocess)
+# Load data
+road = read_sf('./data/osm.gdb/',layer='road') |> 
+  st_transform(32649)
+# Weighting according to road type
+road |> 
+  dplyr::mutate(weight = dplyr::case_match(highway,
+                              c('motorway','primary') ~ 5,
+                         c('motorway_link','primary_link','trunk','secondary') ~ 4,
+                              c('trunk_link','secondary_link','tertiary') ~ 3,
+                              c('tertiary_link','residential') ~ 2,
+                              .default = 1)) -> road
+qgis_run_algorithm(
+  algorithm = "native:linedensity",INPUT = road,
+  WEIGHT = "weight",RADIUS = 90,PIXEL_SIZE = 30) |> 
+  qgis_as_terra()-> RD
+```
+
+]
+
+--
+
+.pull-right[
+<img src="./assets/figures/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" />
+]
+
+---
+background-image: url("./assets/pkgs.jpg")
+background-position: center
+background-size: contain
+
+--
+
+.pull-left[
+
+## <span style="color: #4472c4;display: block;margin-top: 70px;"> [sdsfun](https://stscl.github.io/sdsfun/)</span>
+
+#### Spatial Data Science Complementary Features
+
+```r
+library(sf)
+pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun'))
+pts_v = sf_voronoi_diagram(pts)
+
+library(ggplot2)
+ggplot() +
+  geom_sf(data = pts_v, color = 'red',
+          fill = 'transparent') +
+  geom_sf(data = pts, color = 'blue', size = 1.25) +
+  theme_void()
+```
+
+]
+
+--
+
+.pull-right[
+<img src="./assets/figures/voronoi.png" style="margin-top: 120px; width: 80%; height: auto;" />
+]
+
+---
+background-image: url("./assets/pkgs.jpg")
+background-position: center
+background-size: contain
+
+--
+
+.pull-left[
+<div style="margin-top: 70px;">
+
+<pre><code>
+library(sf)
+librarY(sdsfun)
+pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun'))
+
+wt1 = spdep_distance_swm(pts, style = 'B')
+wt2 = spdep_distance_swm(pts, kernel = 'gaussian')
+wt3 = spdep_distance_swm(pts, k = 3, kernel = 'gaussian')
+wt4 = spdep_distance_swm(pts, k = 3, kernel = 'gaussian', bandwidth = 10000)
+</code></pre>
+</div>
+]
+
+--
+
+.pull-right[
+
+<div style="margin-top: 70px;">
+
+<pre><code>
+library(sf)
+library(sdsfun)
+pts = read_sf(system.file('extdata/pts.gpkg',package = 'sdsfun'))
+
+wt1 = spdep_contiguity_swm(pts, k = 6, style = 'B')
+wt2 = spdep_contiguity_swm(pts, queen = TRUE, style = 'B')
+wt3 = spdep_contiguity_swm(pts, queen = FALSE, order = 2, style = 'B')
+</code></pre>
+
+]
+
+
+---
+background-image: url("./assets/pkgs.jpg")
+background-position: center
+background-size: contain
+
+--
+
+.pull-left[
+
+## <span style="color: #4472c4;display: block;margin-top: 80px;"> [qgisprocess](https://r-spatial.github.io/qgisprocess/)</span>
+
+#### Use QGIS Processing Algorithms in R
+
+```r
+library(qgisprocess)
+
+# Load data
+road = read_sf('./data/osm.gdb/',layer='road') |> 
+  st_transform(32649)
+
+# Weighting according to road type
+road |> 
+  dplyr::mutate(weight = dplyr::case_match(highway,
+                              c('motorway','primary') ~ 5,
+                              c('motorway_link','primary_link','trunk','secondary') ~ 4,
+                              c('trunk_link','secondary_link','tertiary') ~ 3,
+                              c('tertiary_link','residential') ~ 2,
+                              .default = 1)) -> road
+
+qgis_run_algorithm(
+  algorithm = "native:linedensity",INPUT = road,
+  WEIGHT = "weight",RADIUS = 90,PIXEL_SIZE = 30) |> 
+  qgis_as_terra()-> RD
+
+RD
+```
+
+]
+
+.pull-right[
+<img src="./assets/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" />
+]
+
+---
+background-image: url("./assets/pkgs.jpg")
+background-position: center
+background-size: contain
+
+--
+
+.pull-left[
+
+## <span style="color: #4472c4;display: block;margin-top: 80px;"> [qgisprocess](https://r-spatial.github.io/qgisprocess/)</span>
+
+#### Use QGIS Processing Algorithms in R
+
+```r
+library(qgisprocess)
+
+# Load data
+road = read_sf('./data/osm.gdb/',layer='road') |> 
+  st_transform(32649)
+
+# Weighting according to road type
+road |> 
+  dplyr::mutate(weight = dplyr::case_match(highway,
+                              c('motorway','primary') ~ 5,
+                              c('motorway_link','primary_link','trunk','secondary') ~ 4,
+                              c('trunk_link','secondary_link','tertiary') ~ 3,
+                              c('tertiary_link','residential') ~ 2,
+                              .default = 1)) -> road
+
+qgis_run_algorithm(
+  algorithm = "native:linedensity",INPUT = road,
+  WEIGHT = "weight",RADIUS = 90,PIXEL_SIZE = 30) |> 
+  qgis_as_terra()-> RD
+
+RD
+```
+
+]
+
+.pull-right[
+<img src="./assets/fig1.png" style="margin-top: 120px; width: 80%; height: auto;" />
+]
 
 ---
 class: center, middle
