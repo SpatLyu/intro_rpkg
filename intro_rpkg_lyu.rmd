@@ -176,7 +176,7 @@ background-size: contain
 
 .pull-left[
 
-## <span style="color: #4472c4;display: block;margin-top: 70px;"> [geocn](https://stscl.github.io/geocn/)</span>
+## <a href="https://stscl.github.io/geocn/"<span style="color: #51463a;display: block;margin-top: 70px;">geocn</span></a>
 
 #### Loads Spatial Data Sets of China
 
@@ -258,7 +258,7 @@ background-size: contain
 
 .pull-left[
 
-## <span style="color: #4472c4;display: block;margin-top: 70px;"> [qgisprocess](https://r-spatial.github.io/qgisprocess/)</span>
+## <a href="https://r-spatial.github.io/qgisprocess/"><span style="color: #497d29;display: block;margin-top: 70px;">qgisprocess</span></a>
 
 #### Use QGIS Processing Algorithms in R
 
@@ -287,7 +287,7 @@ qgis_run_algorithm(
 
 .pull-right[
 <div class="center-img">
-<img src="./assets/figures/rd.png" style="margin-top: 100px; height: 50%; width: auto;" />
+<img src="./assets/figures/rd.png" style="margin-top: 120px; height: 50%; width: auto;" />
 </div>
 ]
 
@@ -300,7 +300,7 @@ background-size: contain
 
 .pull-left[
 
-## <span style="color: #4472c4;display: block;margin-top: 70px;"> [sdsfun](https://stscl.github.io/sdsfun/)</span>
+## <a href="https://stscl.github.io/sdsfun/"><span style="color: #00001c;display: block;margin-top: 70px;">sdsfun</span></a>
 
 #### Spatial Data Science Complementary Features
 
@@ -375,7 +375,7 @@ background-size: contain
 
 .pull-left[
 
-## <span style="color: #5b7b75;display: block;margin-top: 60px;"> [gdverse](https://ausgis.github.io/gdverse/) </span>
+## <a href="https://ausgis.github.io/gdverse/"><span style="color: #5b7b75;display: block;margin-top: 60px;">gdverse</span><a>
 
 #### Geographical Detector Models
 
@@ -405,7 +405,7 @@ background-size: contain
 
 .pull-left[
 
-## <span style="color: ##91a5addisplay: block;margin-top: 80px;"> [geocomplexity](https://ausgis.github.io/geocomplexity/)</span>
+## <a href="https://ausgis.github.io/geocomplexity/"><span style="color: #b0c9e3;display: block;margin-top: 85px;"> geocomplexity</span></a>
 
 #### Geocomplexity Mitigates Spatial Bias
 
@@ -441,6 +441,6 @@ background-size: contain
 
 # Thanks
 
-### Wenbo Lv
+### [Wenbo Lv](https://spatlyu.github.io/)
 
-### lyu.geosocial@gmail.com
+### [lyu.geosocial@gmail.com](mailto:lyu.geosocial@gmail.com)
