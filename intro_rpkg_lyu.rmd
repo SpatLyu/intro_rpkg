@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE,
                       out.height = "400px",
                       fig.align = 'center',
                       comment = "##",
-                      fig.path = "assets/figures",
+                      fig.path = "assets/figures/",
                       htmltools.dir.version = FALSE)
 ```
 
@@ -186,7 +186,7 @@ background-size: contain
 
 .pull-left[
 
-```{r world1,out.height="50%",out.width="50%",fig.width=4.5,fig.height=3}
+```{r world1,out.height="50%",out.width="50%",fig.width=4.5,fig.height=2.5}
 library(sf)
 library(geocn)
 library(ggplot2)
@@ -203,7 +203,7 @@ ggplot(data = world1) +
 
 .pull-right[
 
-```{r world2,out.height="50%",out.width="50%",fig.width=4.5,fig.height=3}
+```{r world2,out.height="50%",out.width="50%",fig.width=4.5,fig.height=2.5}
 library(sf)
 library(geocn)
 library(ggplot2)
